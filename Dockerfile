@@ -1,10 +1,9 @@
 FROM alpine:edge
 MAINTAINER identakid.net <ccssdev@identakid.net>
 
-ENV VERSION 1.5.0-rc3
+ENV VERSION 1.5.1
 
-RUN apk add --update bash openjdk7
-
+RUN apk add --update bash openjdk7 ca-certificates
 RUN wget -P /tmp "http://download.elastic.co/logstash/logstash/logstash-$VERSION.tar.gz" \
     && tar -xzf "/tmp/logstash-$VERSION.tar.gz" -C /tmp \
     && mv "/tmp/logstash-$VERSION" /home/logstash
